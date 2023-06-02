@@ -19,10 +19,34 @@ class build_btn extends StatelessWidget {
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             elevation: 0),
-        onPressed: () => {},
+        onPressed: () => {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()))
+        },
         child: const Text(
           "LOGIN",
           style: TextStyle(color: Colors.white, fontSize: 15),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
         ),
       ),
     );

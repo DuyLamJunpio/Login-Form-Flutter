@@ -26,10 +26,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ignore: non_constant_identifier_names
-
-// ignore: non_constant_identifier_names
-
 class Login extends StatelessWidget {
   const Login({super.key});
 
@@ -110,7 +106,27 @@ class Login extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          TextButton(onPressed: () {}, child: const Text("SIGN IN"))
+          TextButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                          title: const Text("Sign in"),
+                          content: const Text("This is AlertDialog Sign in"),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(ctx).pop();
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(10),
+                                child: const Text("OK"),
+                              ),
+                            ),
+                          ],
+                        ));
+              },
+              child: const Text("SIGN IN"))
         ]),
       ),
     ));
@@ -125,6 +141,3 @@ class Login extends StatelessWidget {
     );
   }
 }
-
-
-// ignore: camel_case_types
