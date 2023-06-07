@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'widgets/build_btn.dart';
-import 'widgets/build_password.dart';
-import 'widgets/build_username.dart';
+import 'widgets/btn_login.dart';
+import 'widgets/password.dart';
+import 'widgets/username.dart';
 import 'widgets/social_icon.dart';
 
 void main() {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Login',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -87,32 +86,17 @@ class Login extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            children: [
-              or_divider(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  "OR",
-                  style: TextStyle(
-                      color: Color.fromARGB(155, 23, 23, 23),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
-              or_divider(),
-            ],
-          ),
           const SizedBox(
-            height: 10,
+            height: 100,
           ),
+          const Text("Don't have account?"),
           TextButton(
               onPressed: () {
                 showDialog(
                     context: context,
                     builder: (ctx) => AlertDialog(
-                          title: const Text("Sign in"),
-                          content: const Text("This is AlertDialog Sign in"),
+                          title: const Text("Thông báo"),
+                          content: const Text("Sign up thành công"),
                           actions: <Widget>[
                             TextButton(
                               onPressed: () {
@@ -126,7 +110,9 @@ class Login extends StatelessWidget {
                           ],
                         ));
               },
-              child: const Text("SIGN IN"))
+              child: const Text("SIGN UP",
+              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey),
+              ))
         ]),
       ),
     ));
